@@ -14,3 +14,11 @@
 $app->get('/', function () use ($app) {
     return $app->version();
 });
+
+$app->get('/jurandir' , function(){
+   return 'owned';
+});
+
+$app->get('/proto' , ['uses' => 'JurandirController@exe']);
+
+$app->get('/proto/user/{userid}' , ['uses' => 'JurandirController@show']);
